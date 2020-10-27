@@ -43,25 +43,26 @@
 // var j = 0;
 
 function reverseWordPre(word){
-  var reverseWord =[]
-  for(i = 0, j = word.length; i < word.length, j>=0; i++, j--){
-      reverseWord[i] = word[j]
-  }
-  return (reverseWord.join("") == word)
+          var reverseWord =[];
+
+          for(i = 0 ; i <= word.length; i++){
+              reverseWord[i] = word[word.length-i];
+          }
+
+          return (reverseWord.join("") == word);
 }
 
-console.log(reverseWordPre("ciao"))
-
-
+console.log(reverseWordPre("ciao"));
 
 document.getElementById("go").addEventListener("click", function(){
 
-var inputWord = document.getElementById("palInput").value.toLowerCase()
+  var inputWord = document.getElementById("palInput").value.toLowerCase();
 
-if (reverseWordPre(inputWord)){
-  document.getElementById("result").innerHTML="La parola inserita è Palindroma"
-}else{
-  document.getElementById("result").innerHTML="La parola inserita <strong> NON </strong> è Palindroma"
+  if (reverseWordPre(inputWord)){
+      document.getElementById("result").innerHTML="La parola inserita è Palindroma";
   }
+    else{
+          document.getElementById("result").innerHTML="La parola inserita <strong> NON </strong> è Palindroma";
+    }
 
 })
